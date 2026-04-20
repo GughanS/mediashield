@@ -1,0 +1,24 @@
+# Environments
+backend/venv/
+backend/.venv/
+venv/
+.venv/
+
+# Node
+frontend/node_modules/
+node_modules/
+dist/
+
+# Python caching
+__pycache__/
+*.pyc
+*.pyo
+
+# Environment Variables
+.env
+*.env
+
+# IDEs and OS
+.vscode/
+.idea/
+.DS_Store
