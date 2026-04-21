@@ -21,12 +21,15 @@ class PublicFeedCrawler:
         """
         all_posts = []
         
+        # Enforce search context to purely sports domain to avoid irrelevant DDG hits
+        search_query = query_context if "sport" in query_context.lower() else f"{query_context} sports news"
+
         # 1. Fetch real internet intel via DDGS (News and Video streams matching the exact query)
         if HAS_DDGS:
             try:
                 with DDGS() as ddgs:
                     # Real journalistic/blog sources
-                    news_results = list(ddgs.news(query_context, max_results=3))
+                    news_results = list(ddgs.news(search_query, max_results=3))
                     for res in news_results:
                         all_posts.append(FeedItem(
                             id=str(uuid.uuid4())[:8],
@@ -42,7 +45,7 @@ class PublicFeedCrawler:
             try:    
                 with DDGS() as ddgs:
                     # Real video platforms (YouTube, Dailymotion, TikTok hits)
-                    video_results = list(ddgs.videos(query_context, max_results=3))
+                    video_results = list(ddgs.videos(search_query, max_results=3))
                     for res in video_results:
                         all_posts.append(FeedItem(
                             id=str(uuid.uuid4())[:8],

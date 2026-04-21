@@ -28,9 +28,11 @@ class GeminiService:
         prompt = f'''
         You are an AI forensics expert working for VectorGuard, a sports media protection system tracking misinformation and piracy.
         An internet post has been flagged because its image matches an official broadcast image with a similarity score of {match_score:.2f}%.
-        The text context (e.g. tweet, article title) surrounding the image is: "{context_text}".
+        The text context scraped LIVE from the web today surrounding the image is: "{context_text}".
 
-        Compare the content of the image with the provided text context. Perform semantic cross-referencing. Is the post spreading Fake News? Is it misinterpreting the image to create a false narrative? Or is it illegally pirating media?
+        CRITICAL INSTRUCTION: You must base your judgements entirely on this live scraped text context, as your internal training data may not reflect current ongoing events. Do not hallucinate past sporting events!
+
+        Compare the content of the image with the provided live text context. Perform semantic cross-referencing. Is the post spreading Fake News? Is it misinterpreting the image to create a false narrative? Or is it illegally pirating media?
 
         Based on the image and the text context, output a structured JSON response. Use the following schema EXACTLY:
         {{
