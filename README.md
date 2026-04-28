@@ -8,7 +8,8 @@ Designed entirely for enterprise-grade OSINT (Open Source Intelligence), this pr
 
 ## Key Features
 
-* **Real-Time OSINT Crawling:** Bypasses simulated data to physically scrape live DuckDuckGo News and Video indexes to map out where a disputed claim or video is spreading globally across YouTube, TikTok, and media outlets.
+* **Real-Time OSINT Crawling:** Bypasses simulated data to physically scrape live DuckDuckGo News and Video indexes to
+ map out where a disputed claim or video is spreading globally across YouTube, TikTok, and media outlets.
 * **Gemini 1.5 Pro Forensic Triage:** Leverages Google's flagship multimodal model to visually scan the uploaded suspect image, compare it against the scraped contextual claims, and classify it mathematically (e.g. `Fake News`, `Piracy`, `Authentic`).
 * **Instant Glassmorphic Dashboard:** Designed entirely with Vanilla CSS for an ultra-premium, dark-mode "SOC Terminal" aesthetic eliminating bloatware dependencies.
 * **Global Cloud Architecture:** containerized securely for Google Cloud Run (Backend) and Firebase Global CDN (Frontend) deployment.
